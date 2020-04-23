@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{CAC03E36-8A6D-457E-B0BD-69DF1B480AE6}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>VBVectorGeneric.Module1</StartupObject>
+    <StartupObject>VBVectorGeneric.MainModule</StartupObject>
     <RootNamespace>VBVectorGeneric</RootNamespace>
     <AssemblyName>VBVectorGeneric</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -69,7 +69,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Module1.vb" />
+    <Compile Include="Vector.vb" />
+    <Compile Include="DLNode.vb" />
+    <Compile Include="VectorInterface.vb" />
+    <Compile Include="MainModule.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
