@@ -8,8 +8,26 @@
         Return (counter = 0)
     End Function
 
-    Public Function elementAtRank(k As Integer) As DLNode(Of T) Implements VectorInterface(Of T).elementAtRank
+    Public Function elementAtRank(k As Integer) As T Implements VectorInterface(Of T).elementAtRank
+        If (isEmpty()) Then
+            Console.WriteLine("Vector is Empty. From elementAtRank")
+            '            Console.Out.("Vector.elementAtRank() was caled while Vector was empty")
+            Throw New Exception("No elements in vector")
+        ElseIf (k >= size() Or k < 0) Then
+            Console.WriteLine("K is not a valid Index")
+            Throw New Exception("Index out of bounds")
+        Else
+            Dim cursor As New DLNode(Of T)
+            cursor = head
 
+            For i As Integer = 0 To k
+                cursor = cursor.getNext()
+            Next
+
+            Return cursor.getElement()
+
+        End If
+        Throw New NotImplementedException()
 
     End Function
 
