@@ -27,31 +27,31 @@
             Return cursor.getElement()
 
         End If
-        Throw New NotImplementedException()
+
 
     End Function
 
-    Public Function insertElementAt(k As Integer, el As T) As DLNode(Of T) Implements VectorInterface(Of T).insertElementAt
+    Public Function insertElement(el As T) As DLNode(Of T) Implements VectorInterface(Of T).insertElement
         Dim temp As New DLNode(Of T)
         temp.setElement(el)
 
-        If Not (validIndex(k)) Then
-            Throw New IndexOutOfRangeException("CkeckIndex detected a invalid index")
+        'If Not (validIndex(k)) Then
+        '    Throw New IndexOutOfRangeException("CkeckIndex detected a invalid index")
+        'Else
+        If (size() = 0) Then
+            head = New DLNode(Of T)
+            head.setNext(temp)
         Else
-            If (size() = 0) Then
-                head = New DLNode(Of T)
-                head.setNext(temp)
-            Else
-                Dim cursor = New DLNode(Of T)
-                cursor = head
+            Dim cursor = New DLNode(Of T)
+            cursor = head
 
-                For i As Integer = 0 To size() - 1
-                    cursor = cursor.getNext()
-                Next
-                cursor.setNext(temp)
-            End If
-            counter += 1
+            For i As Integer = 0 To size() - 1
+                cursor = cursor.getNext()
+            Next
+            cursor.setNext(temp)
         End If
+        counter += 1
+        'End If
 
     End Function
 
